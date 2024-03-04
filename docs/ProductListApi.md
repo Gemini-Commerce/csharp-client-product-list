@@ -4,7 +4,6 @@ All URIs are relative to *https://product-list.api.gogemini.io*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BulkUpdateProductListAssociations**](ProductListApi.md#bulkupdateproductlistassociations) | **POST** /productlist.ProductList/BulkUpdateProductListAssociations | Bulk update collection associations position |
 | [**CreateProductList**](ProductListApi.md#createproductlist) | **POST** /productlist.ProductList/CreateProductList | Create Collection |
 | [**CreateProductListAssociation**](ProductListApi.md#createproductlistassociation) | **POST** /productlist.ProductList/CreateProductListAssociation | Create Collection/Product Association |
 | [**DeleteProductList**](ProductListApi.md#deleteproductlist) | **POST** /productlist.ProductList/DeleteProductList | Delete Collection |
@@ -16,106 +15,11 @@ All URIs are relative to *https://product-list.api.gogemini.io*
 | [**GetProductListsCount**](ProductListApi.md#getproductlistscount) | **POST** /productlist.ProductList/GetProductListsCount | Get Collection Product Count |
 | [**ListProductListAssociations**](ProductListApi.md#listproductlistassociations) | **POST** /productlist.ProductList/ListProductListAssociations | List Collection/Product Associations |
 | [**ListProductLists**](ProductListApi.md#listproductlists) | **POST** /productlist.ProductList/ListProductLists | List Collections |
+| [**ProductListBulkUpdateProductListAssociations**](ProductListApi.md#productlistbulkupdateproductlistassociations) | **POST** /productlist.ProductList/BulkUpdateProductListAssociations |  |
 | [**SearchProductLists**](ProductListApi.md#searchproductlists) | **POST** /productlist.ProductList/SearchProductLists | Search Collections |
 | [**SearchProductListsByIds**](ProductListApi.md#searchproductlistsbyids) | **POST** /productlist.ProductList/SearchProductListsByIds | Search Collections by Ids |
+| [**SetProductListAssociations**](ProductListApi.md#setproductlistassociations) | **POST** /productlist.ProductList/SetProductListAssociations | Set Collection/Product Associations |
 | [**UpdateProductList**](ProductListApi.md#updateproductlist) | **POST** /productlist.ProductList/UpdateProductList | Update Collection |
-
-<a id="bulkupdateproductlistassociations"></a>
-# **BulkUpdateProductListAssociations**
-> RpcStatus BulkUpdateProductListAssociations (ProductlistBulkUpdateProductListAssociationsRequest body)
-
-Bulk update collection associations position
-
-The BulkUpdateProductListAssociations endpoint updates the positions of specified associations.
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
-
-namespace Example
-{
-    public class BulkUpdateProductListAssociationsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
-
-            var apiInstance = new ProductListApi(config);
-            var body = new ProductlistBulkUpdateProductListAssociationsRequest(); // ProductlistBulkUpdateProductListAssociationsRequest | 
-
-            try
-            {
-                // Bulk update collection associations position
-                RpcStatus result = apiInstance.BulkUpdateProductListAssociations(body);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling ProductListApi.BulkUpdateProductListAssociations: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the BulkUpdateProductListAssociationsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Bulk update collection associations position
-    ApiResponse<RpcStatus> response = apiInstance.BulkUpdateProductListAssociationsWithHttpInfo(body);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling ProductListApi.BulkUpdateProductListAssociationsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **body** | [**ProductlistBulkUpdateProductListAssociationsRequest**](ProductlistBulkUpdateProductListAssociationsRequest.md) |  |  |
-
-### Return type
-
-[**RpcStatus**](RpcStatus.md)
-
-### Authorization
-
-[standardAuthorization](../README.md#standardAuthorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | OK |  -  |
-| **401** | Unauthorized |  -  |
-| **500** | An internal error occurred is thrown when an incompatible payload is sent |  -  |
-| **0** | An unexpected error response. |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="createproductlist"></a>
 # **CreateProductList**
@@ -141,8 +45,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistCreateProductListRequest(); // ProductlistCreateProductListRequest | 
@@ -196,7 +102,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -238,8 +144,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistCreateProductListAssociationRequest(); // ProductlistCreateProductListAssociationRequest | 
@@ -293,7 +201,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -335,8 +243,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistDeleteProductListRequest(); // ProductlistDeleteProductListRequest | 
@@ -390,7 +300,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -432,8 +342,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistDeleteProductListAssociationRequest(); // ProductlistDeleteProductListAssociationRequest | 
@@ -487,7 +399,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -529,8 +441,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistGetProductListAssociationsByProductGrnRequest(); // ProductlistGetProductListAssociationsByProductGrnRequest | 
@@ -584,7 +498,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -626,8 +540,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistGetProductListByCodeRequest(); // ProductlistGetProductListByCodeRequest | 
@@ -681,7 +597,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -723,8 +639,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistGetProductListByIdRequest(); // ProductlistGetProductListByIdRequest | 
@@ -778,7 +696,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -820,8 +738,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistGetProductListByUrlKeyRequest(); // ProductlistGetProductListByUrlKeyRequest | 
@@ -875,7 +795,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -917,8 +837,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistGetProductListsCountRequest(); // ProductlistGetProductListsCountRequest | 
@@ -972,7 +894,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1014,8 +936,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistListProductListAssociationsRequest(); // ProductlistListProductListAssociationsRequest | 
@@ -1069,7 +993,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1111,8 +1035,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistListProductListsRequest(); // ProductlistListProductListsRequest | 
@@ -1166,7 +1092,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1180,6 +1106,99 @@ catch (ApiException e)
 | **200** | OK |  -  |
 | **401** | Unauthorized |  -  |
 | **500** | An internal error occurred is thrown when an incompatible payload is sent |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="productlistbulkupdateproductlistassociations"></a>
+# **ProductListBulkUpdateProductListAssociations**
+> Object ProductListBulkUpdateProductListAssociations (ProductlistBulkUpdateProductListAssociationsRequest body)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using product-list.Api;
+using product-list.Client;
+using product-list.Model;
+
+namespace Example
+{
+    public class ProductListBulkUpdateProductListAssociationsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://product-list.api.gogemini.io";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ProductListApi(config);
+            var body = new ProductlistBulkUpdateProductListAssociationsRequest(); // ProductlistBulkUpdateProductListAssociationsRequest | 
+
+            try
+            {
+                Object result = apiInstance.ProductListBulkUpdateProductListAssociations(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProductListApi.ProductListBulkUpdateProductListAssociations: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ProductListBulkUpdateProductListAssociationsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<Object> response = apiInstance.ProductListBulkUpdateProductListAssociationsWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProductListApi.ProductListBulkUpdateProductListAssociationsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | [**ProductlistBulkUpdateProductListAssociationsRequest**](ProductlistBulkUpdateProductListAssociationsRequest.md) |  |  |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
 | **0** | An unexpected error response. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1208,8 +1227,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistSearchProductListsRequest(); // ProductlistSearchProductListsRequest | 
@@ -1263,7 +1284,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1305,8 +1326,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistSearchProductListsByIdsRequest(); // ProductlistSearchProductListsByIdsRequest | 
@@ -1360,7 +1383,106 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **401** | Unauthorized |  -  |
+| **500** | An internal error occurred is thrown when an incompatible payload is sent |  -  |
+| **0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="setproductlistassociations"></a>
+# **SetProductListAssociations**
+> ProductlistSetProductListAssociationsResponse SetProductListAssociations (ProductlistSetProductListAssociationsRequest body)
+
+Set Collection/Product Associations
+
+The SetProductListAssociations endpoint is used to set the associations between a collection and a list of products.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using product-list.Api;
+using product-list.Client;
+using product-list.Model;
+
+namespace Example
+{
+    public class SetProductListAssociationsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://product-list.api.gogemini.io";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            var apiInstance = new ProductListApi(config);
+            var body = new ProductlistSetProductListAssociationsRequest(); // ProductlistSetProductListAssociationsRequest | 
+
+            try
+            {
+                // Set Collection/Product Associations
+                ProductlistSetProductListAssociationsResponse result = apiInstance.SetProductListAssociations(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProductListApi.SetProductListAssociations: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SetProductListAssociationsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Set Collection/Product Associations
+    ApiResponse<ProductlistSetProductListAssociationsResponse> response = apiInstance.SetProductListAssociationsWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProductListApi.SetProductListAssociationsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | [**ProductlistSetProductListAssociationsRequest**](ProductlistSetProductListAssociationsRequest.md) |  |  |
+
+### Return type
+
+[**ProductlistSetProductListAssociationsResponse**](ProductlistSetProductListAssociationsResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1402,8 +1524,10 @@ namespace Example
         {
             Configuration config = new Configuration();
             config.BasePath = "https://product-list.api.gogemini.io";
-            // Configure OAuth2 access token for authorization: standardAuthorization
-            config.AccessToken = "YOUR_ACCESS_TOKEN";
+            // Configure API key authorization: Authorization
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
 
             var apiInstance = new ProductListApi(config);
             var body = new ProductlistUpdateProductListRequest(); // ProductlistUpdateProductListRequest | 
@@ -1457,7 +1581,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[standardAuthorization](../README.md#standardAuthorization)
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

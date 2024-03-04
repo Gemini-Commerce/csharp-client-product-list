@@ -27,22 +27,24 @@ using OpenAPIDateConverter = product-list.Client.OpenAPIDateConverter;
 namespace product-list.Model
 {
     /// <summary>
-    /// ProductlistListProductListsRequest
+    /// ProductlistSetProductListAssociationsRequest
     /// </summary>
-    [DataContract(Name = "productlistListProductListsRequest")]
-    public partial class ProductlistListProductListsRequest : IValidatableObject
+    [DataContract(Name = "productlistSetProductListAssociationsRequest")]
+    public partial class ProductlistSetProductListAssociationsRequest : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProductlistListProductListsRequest" /> class.
+        /// Initializes a new instance of the <see cref="ProductlistSetProductListAssociationsRequest" /> class.
         /// </summary>
         /// <param name="tenantId">tenantId.</param>
-        /// <param name="pageSize">pageSize.</param>
-        /// <param name="pageToken">pageToken.</param>
-        public ProductlistListProductListsRequest(string tenantId = default(string), long pageSize = default(long), string pageToken = default(string))
+        /// <param name="listId">listId.</param>
+        /// <param name="productGrn">productGrn.</param>
+        /// <param name="associations">associations.</param>
+        public ProductlistSetProductListAssociationsRequest(string tenantId = default(string), string listId = default(string), string productGrn = default(string), List<SetProductListAssociationsRequestAssociation> associations = default(List<SetProductListAssociationsRequestAssociation>))
         {
             this.TenantId = tenantId;
-            this.PageSize = pageSize;
-            this.PageToken = pageToken;
+            this.ListId = listId;
+            this.ProductGrn = productGrn;
+            this.Associations = associations;
         }
 
         /// <summary>
@@ -52,16 +54,22 @@ namespace product-list.Model
         public string TenantId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PageSize
+        /// Gets or Sets ListId
         /// </summary>
-        [DataMember(Name = "pageSize", EmitDefaultValue = false)]
-        public long PageSize { get; set; }
+        [DataMember(Name = "listId", EmitDefaultValue = false)]
+        public string ListId { get; set; }
 
         /// <summary>
-        /// Gets or Sets PageToken
+        /// Gets or Sets ProductGrn
         /// </summary>
-        [DataMember(Name = "pageToken", EmitDefaultValue = false)]
-        public string PageToken { get; set; }
+        [DataMember(Name = "productGrn", EmitDefaultValue = false)]
+        public string ProductGrn { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Associations
+        /// </summary>
+        [DataMember(Name = "associations", EmitDefaultValue = false)]
+        public List<SetProductListAssociationsRequestAssociation> Associations { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,10 +78,11 @@ namespace product-list.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ProductlistListProductListsRequest {\n");
+            sb.Append("class ProductlistSetProductListAssociationsRequest {\n");
             sb.Append("  TenantId: ").Append(TenantId).Append("\n");
-            sb.Append("  PageSize: ").Append(PageSize).Append("\n");
-            sb.Append("  PageToken: ").Append(PageToken).Append("\n");
+            sb.Append("  ListId: ").Append(ListId).Append("\n");
+            sb.Append("  ProductGrn: ").Append(ProductGrn).Append("\n");
+            sb.Append("  Associations: ").Append(Associations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
