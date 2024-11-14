@@ -1,4 +1,4 @@
-# product-list.Api.ProductListApi
+# productlist.Api.ProductListApi
 
 All URIs are relative to *https://product-list.api.gogemini.io*
 
@@ -33,9 +33,9 @@ The CreateProductList endpoint is used to create a new collection of products wi
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -132,9 +132,9 @@ The CreateProductListAssociation endpoint is used to create an association betwe
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -231,9 +231,9 @@ The DeleteProductList endpoint is used to delete an existing collection of produ
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -330,9 +330,9 @@ The DeleteProductListAssociation endpoint is used to delete an association betwe
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -429,9 +429,9 @@ The GetProductListAssociationsByProductGrn endpoint is used to get the associati
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -528,9 +528,9 @@ The GetProductListByCode endpoint is used to retrieve an existing collection of 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -627,9 +627,9 @@ The GetProductListById endpoint is used to retrieve an existing collection of pr
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -726,9 +726,9 @@ The GetProductListByUrlKey endpoint is used to retrieve an existing collection o
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -825,9 +825,9 @@ The GetProductListsCount endpoint is used to get the number of products associat
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -924,9 +924,9 @@ The ListProductListAssociations endpoint is used to list the associations betwee
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -1023,9 +1023,9 @@ The ListProductLists endpoint is used to retrieve a list of existing collections
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -1120,9 +1120,9 @@ catch (ApiException e)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -1215,9 +1215,9 @@ The SearchProductLists endpoint is used to retrieve a list of existing collectio
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -1314,9 +1314,9 @@ The SearchProductListsByIds endpoint is used to retrieve a list of existing coll
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -1413,9 +1413,9 @@ The SetProductListAssociations endpoint is used to set the associations between 
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
@@ -1512,9 +1512,9 @@ The UpdateProductList endpoint is used to update an existing collection of produ
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using product-list.Api;
-using product-list.Client;
-using product-list.Model;
+using productlist.Api;
+using productlist.Client;
+using productlist.Model;
 
 namespace Example
 {
