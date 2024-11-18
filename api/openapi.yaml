@@ -678,6 +678,7 @@ components:
         value:
           type: string
       type: object
+      x-golang-getsetvalue-exists: true
     SetProductListAssociationsRequestAssociation:
       properties:
         listId:
@@ -1064,6 +1065,7 @@ components:
             type: string
           type: object
       type: object
+      x-golang-getsetvalue-exists: true
     productlistOrderBy:
       properties:
         field:
